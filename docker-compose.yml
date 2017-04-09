@@ -39,3 +39,12 @@ services:
     # improvement on my personal machine). We should consider moving this into a dedicated Docker Compose configuration for
     # tests.
     command: "postgres -c fsync=off -c full_page_writes=off -c synchronous_commit=OFF"
+  db:
+    image: mariadb:10.1.22
+    environment:
+      MYSQL_DATABASE: redash
+      MYSQL_ROOT_PASSWORD: "mysecretpw"
+    volumes:
+      - "./mariadb_data:/var/lib/mysql"
+    ports:
+      - "3307:3306"

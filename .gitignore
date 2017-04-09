@@ -24,3 +24,5 @@ node_modules
 .tmp
 .sass-cache
 npm-debug.log
+mariadb_data/
+db/
